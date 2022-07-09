@@ -1,10 +1,13 @@
+from turtle import bgcolor
 import tornado.ioloop
 import tornado.web
 
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        self.write("Hello, world\n")
+        title = "Hello, World"
+        bgcolor = "dodgerblue"
+        self.render("template.html", title= title, bgcolor = bgcolor)
         print(self.request)
 
 
